@@ -1,0 +1,32 @@
+<td-layout>
+  <td-navigation-drawer flex [sidenavTitle]="'Menu'" color="primary">
+    <mat-nav-list #sidenav>
+      <!-- Links in side bar (routes) -->
+      <a *ngFor="let item of routes" routerLink="{{item.route}}" mat-list-item tdLayoutToggle>
+        <mat-icon color="primary">{{item.icon}}</mat-icon>
+        {{item.title}}
+      </a>
+    </mat-nav-list>
+    <div td-navigation-drawer-menu>
+      <mat-nav-list>
+        <!-- Links in navigation bar -->
+      </mat-nav-list>
+    </div>
+  </td-navigation-drawer>
+  <td-layout-nav [toolbarTitle]="title">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+      <mat-icon>menu</mat-icon>
+    </button>
+    
+
+    <!-- router outlet goes here -->
+    <router-outlet></router-outlet>
+
+    <!-- <td-layout-footer>
+      <div layout="row" layout-align="start center">
+        <span class="md-caption">Copyright &copy; 2017 Menno Guldemond</span>
+      </div>
+    </td-layout-footer> -->
+
+  </td-layout-nav>
+</td-layout>

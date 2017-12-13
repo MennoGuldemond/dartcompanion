@@ -1,0 +1,32 @@
+<div *ngIf="auth.user | async; then authenticated else guest">
+    <!-- template will replace this div -->
+</div>
+
+<!-- User NOT logged in -->
+<ng-template #guest>
+    <mat-card class="text-center">
+        <mat-card-content>
+            <p>Login to get started...</p>
+        </mat-card-content>
+        <mat-card-actions style="padding-bottom: 1em;">
+            <button mat-raised-button color="primary" (click)="auth.googleLogin()">
+                Login with Google
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</ng-template>
+
+<!-- User logged in -->
+<ng-template #authenticated>
+    <mat-card *ngIf="auth.user | async as user" class="text-center">
+        <mat-card-header>
+            <img [src]="user.photoURL" class="profile-image">
+        </mat-card-header>
+        <mat-card-content>
+            {{ user.displayName }}
+        </mat-card-content>
+        <mat-card-actions style="padding-bottom: 1em;">
+            <button mat-raised-button color="accent" (click)="auth.signOut()">Logout</button>
+        </mat-card-actions>
+    </mat-card>
+</ng-template>
