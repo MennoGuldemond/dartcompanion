@@ -19,13 +19,15 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './user/user-profile.component';
 import { HomePageComponent } from './home/home-page.component';
+import { GamesComponent } from './games/games.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UserProfileComponent,
-    HomePageComponent
+    HomePageComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,

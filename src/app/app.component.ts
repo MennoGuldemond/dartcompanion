@@ -20,6 +20,10 @@ export class AppComponent {
         icon: 'account_circle',
         route: '/profile',
         title: 'Profile',
+      }, {
+        icon: 'play_circle_filled',
+        route: '/games',
+        title: 'Games',
       }
     ];
   
